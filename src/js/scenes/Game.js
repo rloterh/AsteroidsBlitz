@@ -3,12 +3,13 @@ import Phaser from 'phaser'
 class Game extends Phaser.Scene{
 
   create(){
-    this.add.text(400, 200, 'Game', {
-      fontSize: 38
-    })
-    .setOrigin(0.5, 0.5)
+    this.spaceShip = this.add.graphics({ lineStyle: { width: 2, color: 0x00ff00 } })
+    const triangle = new Phaser.Geom.Triangle.BuildEquilateral(100, 50, 50)
 
-    console.log('game scene')
+    this.spaceShip.strokeTriangleShape(triangle)
+
+
+
   }
 
 }
