@@ -1,7 +1,6 @@
 import Phaser from 'phaser'
 import {Game} from '../consts/SceneKeys'
 
-
 export default class TitleScreen extends Phaser.Scene{
 
   create(){
@@ -16,8 +15,7 @@ export default class TitleScreen extends Phaser.Scene{
     this.input.keyboard.once(`keydown-SPACE`, () => {
       this.scene.start(Game)
     })
-    
+
     console.log('title scene')
   }
-
 }

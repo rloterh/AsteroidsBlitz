@@ -6,7 +6,7 @@ import * as SceneKeys from './consts/SceneKeys'
 
 const config  = {
   width: 800,
-  height: 500,
+  height: 600,
   type: Phaser.AUTO,
 }
 

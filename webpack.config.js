@@ -4,34 +4,21 @@ module.exports = {
   mode: "development",
   entry: "./src/js/main.js",
   output: {
-    path:path.resolve(__dirname, "dist"),
     filename: "app.js",
+    path:path.resolve(__dirname, "dist"),
+    assetModuleFilename: '[name][ext]'
   },
   module: {
     rules: [
-      {
-        test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
-      },
-      {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        use: [
-          {
-            loader: 'file-loader',
-          },
-        ],
-      },
+      { test: /\.css$/, use: ['style-loader', 'css-loader'] },
+      { test: /\.(svg|ico|png|webp|jpg|gif|jpeg)$/, type: 'asset/resource' },
     ],
   },
   devServer: {
-    proxy: {
-      '/api': 'http://localhost:3000'
-    },
-    contentBase: path.join(__dirname, 'dist'),
-    compress: true,
-    historyApiFallback: true, 
+    port: 9000,
+    contentBase: "./dist",
     hot: true,
-    https: true,
-    noInfo: true,
   },
 }
+
+
