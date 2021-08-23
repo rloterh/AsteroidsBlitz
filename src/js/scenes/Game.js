@@ -9,24 +9,37 @@ class Game extends Phaser.Scene{
   }
 
   create(){
-    const screenCenterX = this.cameras.main.worldView.x + this.cameras.main.width / 2
-    const screenCenterY = this.cameras.main.worldView.y + this.cameras.main.height / 2
+    this.control = false
+    this.screenCenterX = this.cameras.main.worldView.x + this.cameras.main.width / 2
+    this.screenCenterY = this.cameras.main.worldView.y + this.cameras.main.height / 2
     
-    this.laser = this.add.sprite(screenCenterX, screenCenterY, 'laser')
-    this.spaceShip = this.add.sprite(screenCenterX, screenCenterY, 'spaceship')
+    this.laser = this.physics.add.sprite(this.screenCenterX, this.screenCenterY, 'laser')
+    this.spaceShip = this.physics.add.sprite(this.screenCenterX, this.screenCenterY, 'spaceship')
 
-    this.input
+    this.mInput = this.input
+    this.mClick = this.input.mousePointer
+    this.wBounds = this.physics.world.bounds
   }
 
   update(){
-    let shipAngle = Phaser.Math.Angle.Between(this.spaceShip.x,this.spaceShip.y,this.input.x,this.input.y)
-    this.spaceShip.setRotation(shipAngle+Math.PI/2)
+    let shipAngle = Phaser.Math.Angle.Between(this.spaceShip.x, this.spaceShip.y, this.mInput.x, this.mInput.y)
+    this.spaceShip.setRotation(shipAngle + Math.PI/2)
     
-    let laserAngle = Phaser.Math.Angle.Between(this.laser.x,this.laser.y,this.input.x,this.input.y)
-    this.laser.setRotation(shipAngle+Math.PI/2)
+    let laserAngle = Phaser.Math.Angle.Between(this.laser.x, this.laser.y, this.mInput.x, this.mInput.y)
+    this.laser.setRotation(shipAngle + Math.PI/2)
+
+    if (this.mClick.isDown && this.control == false){
+      this.laser = this.physics.add.sprite(this.screenCenterX, this.screenCenterY,'laser')
+      this.physics.moveTo(this.laser, this.mInput.x, this.mInput.y, 500)
+      this.control = true
+    }
+
+    if (this.laser.x > this.wBounds.width || this.laser.y > this.wBounds.height || this.laser.x < 0 || this.laser.y < 0){
+      this.control = false
+    }
     
   }
 
 }
 
-export default Game;
+export default Game

@@ -8,6 +8,12 @@ const config  = {
   width: 800,
   height: 600,
   type: Phaser.AUTO,
+  physics:{
+    default:'arcade',
+    arcade:{
+        gravity:{y:0}
+    }
+  }
 }
 
 const game =  new Phaser.Game(config)
