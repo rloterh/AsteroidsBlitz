@@ -16,6 +16,8 @@ class Game extends Phaser.Scene{
     this.laser = this.physics.add.sprite(this.screenCenterX, this.screenCenterY, 'laser')
     this.spaceShip = this.physics.add.sprite(this.screenCenterX, this.screenCenterY, 'spaceship')
 
+    this.asteroid = this.physics.add.sprite(Phaser.Math.Between(0, this.game.config.width), Phaser.Math.Between(0, this.game.config.height), 'asteroid')
+
     this.mInput = this.input
     this.mClick = this.input.mousePointer
     this.wBounds = this.physics.world.bounds
@@ -37,7 +39,12 @@ class Game extends Phaser.Scene{
     if (this.laser.x > this.wBounds.width || this.laser.y > this.wBounds.height || this.laser.x < 0 || this.laser.y < 0){
       this.control = false
     }
-    
+
+    this.physics.add.overlap(this.laser, this.asteroid, () => {
+      this.asteroid.disableBody(true, true)
+        this.laser.disableBody(true, true)
+        this.control = false
+      }, null, this)
   }
 
 }
