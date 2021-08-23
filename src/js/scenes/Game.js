@@ -5,18 +5,26 @@ class Game extends Phaser.Scene{
   preload(){
     this.load.image('spaceship', './../../assets/ship.png')
     this.load.image('laser', './../../assets/laser.png')
+    this.load.image('asteroid', './../../assets/asteroid.png')
   }
 
   create(){
     const screenCenterX = this.cameras.main.worldView.x + this.cameras.main.width / 2
     const screenCenterY = this.cameras.main.worldView.y + this.cameras.main.height / 2
-    this.spaceShip = this.add.image(screenCenterX, screenCenterY, 'spaceship').setOrigin(0.5)
+    
+    this.laser = this.add.sprite(screenCenterX, screenCenterY, 'laser')
+    this.spaceShip = this.add.sprite(screenCenterX, screenCenterY, 'spaceship')
 
-    this.laser = this.add.image(400, 200, 'laser')
+    this.input
   }
 
   update(){
-
+    let shipAngle = Phaser.Math.Angle.Between(this.spaceShip.x,this.spaceShip.y,this.input.x,this.input.y)
+    this.spaceShip.setRotation(shipAngle+Math.PI/2)
+    
+    let laserAngle = Phaser.Math.Angle.Between(this.laser.x,this.laser.y,this.input.x,this.input.y)
+    this.laser.setRotation(shipAngle+Math.PI/2)
+    
   }
 
 }

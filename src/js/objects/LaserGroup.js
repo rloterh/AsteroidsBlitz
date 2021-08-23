@@ -6,7 +6,7 @@ export default class LaserGroup extends Phaser.Physics.Arcade.Group {
     super(scene.physics.world, scene)
       this.createMultiple({
         classType: Laser,
-        frameQuantity: 30,
+        frameQuantity: 500,
         active: false,
         visible: false, laser,
         key: 'laser'
