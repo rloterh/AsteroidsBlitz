@@ -1,4 +1,5 @@
 import Phaser from 'phaser'
+import {GameOver} from '../consts/SceneKeys'
 
 class Game extends Phaser.Scene{
   constructor(){
@@ -8,9 +9,9 @@ class Game extends Phaser.Scene{
   }
 
   preload(){
-    this.load.image('spaceship', './../../assets/ship.png')
-    this.load.image('laser', './../../assets/laser.png')
-    this.load.image('asteroid', './../../assets/asteroid.png')
+    // this.load.image('spaceship', './../../assets/ship.png')
+    // this.load.image('laser', './../../assets/laser.png')
+    // this.load.image('asteroid', './../../assets/asteroid.png')
   }
 
   create(){
@@ -33,7 +34,6 @@ class Game extends Phaser.Scene{
   update(){
     let shipAngle = Phaser.Math.Angle.Between(this.spaceShip.x, this.spaceShip.y, this.mInput.x, this.mInput.y)
     this.spaceShip.setRotation(shipAngle + Math.PI/2)
-    //let laserAngle = Phaser.Math.Angle.Between(this.laser.x, this.laser.y, this.mInput.x, this.mInput.y)
     this.laser.setRotation(shipAngle + Math.PI/2)
 
     if (this.mClick.isDown && this.control == false){
@@ -48,17 +48,35 @@ class Game extends Phaser.Scene{
 
     this.physics.add.overlap(this.laser, this.asteroid, () => {
       this.asteroid.disableBody(true, true)
-        this.laser.disableBody(true, true)
-        this.control = false
-        this.calcScore()
-        this.createAsteroid()
+      this.laser.disableBody(true, true)
+      this.control = false
+      this.calcScore()
+      this.createAsteroid()
       }, null, this)
+
+      this.physics.add.overlap(this.asteroid, this.spaceShip, () => {
+        this.asteroid.disableBody(true, true)
+        this.spaceShip.disableBody(true, true)
+        this.control = true
+        this.gameOver()
+        }, null, this)
 
     this.asteroidAttacks()
   }
 
   createAsteroid(){
     this.asteroid = this.physics.add.sprite(Phaser.Math.Between(0, this.game.config.width), Phaser.Math.Between(0, this.game.config.height), 'asteroid')
+    if (this.asteroid.x > 300 && this.asteroid.x <= 400){
+      this.asteroid.x = 200
+    } else if (this.asteroid.x > 400 && this.asteroid.x <= 500){
+      this.asteroid.x = 600
+    }
+
+    if (this.asteroid.y > 240 && this.asteroid.y <= 300){
+      this.asteroid.x = 180
+    } else if (this.asteroid.x > 300 && this.asteroid.x <= 380){
+      this.asteroid.x = 420
+    }
   }
 
   asteroidAttacks() {
@@ -68,6 +86,13 @@ class Game extends Phaser.Scene{
   calcScore(){
     this.score += 20
     this.scoreText.setText('Score: ' + this.score)
+  }
+
+  gameOver(){
+    this.scene.start(GameOver, {
+      score: this.score
+    })
+
   }
 
 }
