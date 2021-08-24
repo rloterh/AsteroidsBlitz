@@ -1,6 +1,11 @@
 import Phaser from 'phaser'
 
 class Game extends Phaser.Scene{
+  constructor(){
+    super()
+
+    this.score = 0
+  }
 
   preload(){
     this.load.image('spaceship', './../../assets/ship.png')
@@ -21,13 +26,14 @@ class Game extends Phaser.Scene{
     this.mInput = this.input
     this.mClick = this.input.mousePointer
     this.wBounds = this.physics.world.bounds
+
+    this.scoreText = this.add.text(16, 16, 'score: 0', {fontSize: '32px', fill: '#fff'})
   }
 
   update(){
     let shipAngle = Phaser.Math.Angle.Between(this.spaceShip.x, this.spaceShip.y, this.mInput.x, this.mInput.y)
     this.spaceShip.setRotation(shipAngle + Math.PI/2)
-    
-    let laserAngle = Phaser.Math.Angle.Between(this.laser.x, this.laser.y, this.mInput.x, this.mInput.y)
+    //let laserAngle = Phaser.Math.Angle.Between(this.laser.x, this.laser.y, this.mInput.x, this.mInput.y)
     this.laser.setRotation(shipAngle + Math.PI/2)
 
     if (this.mClick.isDown && this.control == false){
@@ -44,13 +50,24 @@ class Game extends Phaser.Scene{
       this.asteroid.disableBody(true, true)
         this.laser.disableBody(true, true)
         this.control = false
+        this.calcScore()
         this.createAsteroid()
       }, null, this)
+
+    this.asteroidAttacks()
   }
 
-  
   createAsteroid(){
     this.asteroid = this.physics.add.sprite(Phaser.Math.Between(0, this.game.config.width), Phaser.Math.Between(0, this.game.config.height), 'asteroid')
+  }
+
+  asteroidAttacks() {
+    this.physics.moveToObject(this.asteroid, this.spaceShip, 100)
+  }
+
+  calcScore(){
+    this.score += 20
+    this.scoreText.setText('Score: ' + this.score)
   }
 
 }
