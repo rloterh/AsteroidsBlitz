@@ -16,7 +16,7 @@ class Game extends Phaser.Scene{
     this.laser = this.physics.add.sprite(this.screenCenterX, this.screenCenterY, 'laser')
     this.spaceShip = this.physics.add.sprite(this.screenCenterX, this.screenCenterY, 'spaceship')
 
-    this.asteroid = this.physics.add.sprite(Phaser.Math.Between(0, this.game.config.width), Phaser.Math.Between(0, this.game.config.height), 'asteroid')
+    this.createAsteroid()
 
     this.mInput = this.input
     this.mClick = this.input.mousePointer
@@ -44,7 +44,13 @@ class Game extends Phaser.Scene{
       this.asteroid.disableBody(true, true)
         this.laser.disableBody(true, true)
         this.control = false
+        this.createAsteroid()
       }, null, this)
+  }
+
+  
+  createAsteroid(){
+    this.asteroid = this.physics.add.sprite(Phaser.Math.Between(0, this.game.config.width), Phaser.Math.Between(0, this.game.config.height), 'asteroid')
   }
 
 }
