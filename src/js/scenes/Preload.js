@@ -1,5 +1,6 @@
 import Phaser from 'phaser'
 import {TitleScreen} from '../consts/SceneKeys'
+import * as e from '../consts/const'
 
 export default class Preload extends Phaser.Scene {
   preload(){
@@ -8,7 +9,10 @@ export default class Preload extends Phaser.Scene {
     this.load.image('asteroid', './../../assets/asteroid.png')
   }
 
-  create() {     
+  create() {
+    e.scoreForm.classList.remove('show-form')
+    e.scoreForm.classList.add('hide-form')    
+        
       this.scene.start(TitleScreen)
   }
 }
