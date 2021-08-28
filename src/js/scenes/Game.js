@@ -1,17 +1,11 @@
 import Phaser from 'phaser'
 import {GameOver} from '../consts/SceneKeys'
 
-class Game extends Phaser.Scene{
+class Game extends Phaser.Scene {
   constructor(){
     super()
 
     this.score = 0
-  }
-
-  preload(){
-    // this.load.image('spaceship', './../../assets/ship.png')
-    // this.load.image('laser', './../../assets/laser.png')
-    // this.load.image('asteroid', './../../assets/asteroid.png')
   }
 
   create(){
@@ -52,16 +46,19 @@ class Game extends Phaser.Scene{
       this.control = false
       this.calcScore()
       this.createAsteroid()
-      }, null, this)
+      }, null, this
+    )
 
-      this.physics.add.overlap(this.asteroid, this.spaceShip, () => {
-        this.asteroid.disableBody(true, true)
-        this.spaceShip.disableBody(true, true)
-        this.control = true
-        this.gameOver()
-        }, null, this)
+    this.physics.add.overlap(this.asteroid, this.spaceShip, () => {
+      this.asteroid.disableBody(true, true)
+      this.spaceShip.disableBody(true, true)
+      this.laser.disableBody(true, true)
+      this.control = true
+      this.gameOver()
+      }, null, this
+    )
 
-    this.asteroidAttacks()
+    this.asteroidAttack()
   }
 
   createAsteroid(){
@@ -79,8 +76,9 @@ class Game extends Phaser.Scene{
     }
   }
 
-  asteroidAttacks() {
-    this.physics.moveToObject(this.asteroid, this.spaceShip, 100)
+  asteroidAttack() {
+    let asteroidSpeed = Phaser.Math.Between(100, 200)
+    this.physics.moveToObject(this.asteroid, this.spaceShip, asteroidSpeed)
   }
 
   calcScore(){
@@ -92,9 +90,7 @@ class Game extends Phaser.Scene{
     this.scene.start(GameOver, {
       score: this.score
     })
-
   }
-
 }
 
 export default Game
