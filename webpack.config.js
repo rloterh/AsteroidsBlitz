@@ -2,23 +2,21 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  mode: "development",
-  entry: "./src/js/main.js",
+  mode: 'development',
+  entry: './src/js/main.js',
   output: {
-    filename: "app.js",
-    path:path.resolve(__dirname, "dist"),
-    //assetModuleFilename: '[name][ext]'
-    //clean: true,
+    filename: 'app.js',
+    path: path.resolve(__dirname, 'dist'),
   },
   module: {
     rules: [
-      { test: /\.css$/, use: ['style-loader', 'css-loader'], },
+      { test: /\.css$/, use: ['style-loader', 'css-loader'] },
       { test: /\.(svg|ico|png|webp|jpg|gif|jpeg)$/, type: 'asset/resource' },
     ],
   },
   devServer: {
     port: 9000,
-    contentBase: "./dist",
+    contentBase: './dist',
     hot: true,
   },
   plugins: [
@@ -26,4 +24,4 @@ module.exports = {
       template: './src/index.html',
     }),
   ],
-}
+};

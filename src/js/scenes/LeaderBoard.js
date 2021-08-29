@@ -4,7 +4,7 @@ import { getScores } from '../api/api';
 import * as e from '../consts/const';
 
 export default class LeaderBoard extends Phaser.Scene {
-  create(data) {
+  create() {
     e.scoreForm.classList.remove('show-form');
     e.scoreForm.classList.add('hide-form');
     e.ul.classList = 'class-table show-form';
@@ -20,7 +20,7 @@ export default class LeaderBoard extends Phaser.Scene {
       this.displayScores(result);
     })();
 
-    this.add.text(400, 450, '*Press space to continue..*').setOrigin(0.5);
+    this.add.text(400, 500, '*Press space to continue..*').setOrigin(0.5);
 
     this.input.keyboard.once('keydown-SPACE', () => {
       this.scene.start(TitleScreen);

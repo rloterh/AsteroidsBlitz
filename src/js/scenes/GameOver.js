@@ -6,6 +6,7 @@ import * as e from '../consts/const';
 export default class GameOver extends Phaser.Scene {
   create(data) {
     this.playerScore = data.score;
+    e.scoreForm.style.display = null;
     e.scoreForm.classList.remove('hide-form');
     e.scoreForm.classList.add('show-form');
 

@@ -26,17 +26,20 @@ class Game extends Phaser.Scene {
   }
 
   update() {
-    const shipAngle = Phaser.Math.Angle.Between(this.spaceShip.x, this.spaceShip.y, this.mInput.x, this.mInput.y);
+    const shipAngle = Phaser.Math.Angle.Between(
+      this.spaceShip.x, this.spaceShip.y, this.mInput.x, this.mInput.y,
+    );
     this.spaceShip.setRotation(shipAngle + Math.PI / 2);
     this.laser.setRotation(shipAngle + Math.PI / 2);
 
-    if (this.mClick.isDown && this.control == false) {
+    if (this.mClick.isDown && this.control === false) {
       this.laser = this.physics.add.sprite(this.screenCenterX, this.screenCenterY, 'laser');
       this.physics.moveTo(this.laser, this.mInput.x, this.mInput.y, 500);
       this.control = true;
     }
 
-    if (this.laser.x > this.wBounds.width || this.laser.y > this.wBounds.height || this.laser.x < 0 || this.laser.y < 0) {
+    if (this.laser.x > this.wBounds.width || this.laser.y > this.wBounds.height
+       || this.laser.x < 0 || this.laser.y < 0) {
       this.control = false;
     }
 
