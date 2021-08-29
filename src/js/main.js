@@ -5,6 +5,7 @@ import Game from './scenes/Game'
 import GameOver from './scenes/GameOver'
 import LeaderBoard from './scenes/LeaderBoard'
 import * as SceneKeys from './consts/SceneKeys'
+import '../css/styles.css';
 
 const config  = {
   width: 800,
