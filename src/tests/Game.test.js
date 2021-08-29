@@ -1,6 +1,6 @@
-import Game from '../js/scenes/Game';
-import 'jest-canvas-mock';
 import Phaser from 'phaser';
+import Game from '../js/scenes/Game';
+// import 'jest-canvas-mock';
 
 it('works', () => {
   expect(1).toEqual(1);

@@ -1,6 +1,5 @@
-import TitleScreen from '../js/scenes/TitleScreen';
-import 'jest-canvas-mock';
 import Phaser from 'phaser';
+import TitleScreen from '../js/scenes/TitleScreen';
 
 it('works', () => {
   expect(1).toEqual(1);
