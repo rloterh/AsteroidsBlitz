@@ -65,8 +65,6 @@ AsteroidsBlitz is a mini shooter game whereby asteroids supposedly attack a spac
 - LeaderBoard API
 - Phaser 3.5
 
-
-
 ### Testing Project
 
 1. - Run the command `npm -v` to ensure node package manager is installed
@@ -83,8 +81,7 @@ AsteroidsBlitz is a mini shooter game whereby asteroids supposedly attack a spac
 3. - Go to the terminal, and navigate to project directory
 4. - Run the command `npm i`
 5. - Validate the javascript syntax and code standard by running the command `npx eslint .`
-6. - All test cases passes, when no error message is shown in the terminal
-7. - To run test cases (using jest), run the command `npm run test`
+6. - Validation check passes, when no error message is shown in the terminal
 
 ### Validating CSS Syntax
 
@@ -93,7 +90,7 @@ AsteroidsBlitz is a mini shooter game whereby asteroids supposedly attack a spac
 3. - Go to the terminal, and navigate to project directory
 4. - Run the command `npm install`
 5. - Validate the css syntax and code standard by running the command `npx stylelint "**/*.{css,scss}"`
-6. - All test cases passes, when no error message is shown in the terminal
+6. - All validation checks passes, when no error message is shown in the terminal
 
 
 ## Author
