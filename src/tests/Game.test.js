@@ -14,3 +14,8 @@ test('BaseScene is not a subclass of container', () => {
     false,
   );
 });
+
+it('Game has a constructor', () => {
+  expect(Game.prototype.constructor).not.toBe(false);
+});
+
