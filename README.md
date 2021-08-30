@@ -110,7 +110,7 @@ Feel free to check the [issues page](https://github.com/rloterh/AsteroidsBlitz/i
 Give a ⭐️ if you like this project!
 
 ## Acknowledgments
-- [Unsplash](https://phaser.io/)
+- [Phaser.io](https://phaser.io/)
 - [Microverse](https://www.microverse.org/)
 
 
