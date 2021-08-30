@@ -12,8 +12,9 @@ AsteroidsBlitz is a mini shooter game whereby asteroids supposedly attacks a spa
 | ------------------------- |
 | [Live Demo](#live-demo) |
 | [App Screenshots](#app-screenshots) |
-| [Built With](#built-with)   |
+| [How To Play](#how-to-play)   |
 | [Getting Started](#getting-started)   |
+| [Built With](#built-with)   |
 | [Testing](#testing)   |
 | [Author](#author)       |
 | [License](#license)       |
@@ -36,8 +37,16 @@ AsteroidsBlitz is a mini shooter game whereby asteroids supposedly attacks a spa
 2. - Move `mouse` to direct or rotate spaceship
 3. - Left-click `mouse` to launch missile
 
-  
  <br>
+
+## Getting Started
+
+1. - Copy the git link `https://github.com/rloterh/AsteroidsBlitz.git` of this project
+2. - In your terminal run the command `git clone https://github.com/rloterh/AsteroidsBlitz.git`
+3. - Navigate to the cloned project directory
+4. - Run the command `npm init` to setup webpack and other project dependencies
+5. - Run the command `npm run start` to compile the project
+6. - The application launches in the default web browser with url as: `http://localhost:9000/`
 
 
 ## Built With
@@ -48,15 +57,6 @@ AsteroidsBlitz is a mini shooter game whereby asteroids supposedly attacks a spa
 - LeaderBoard API
 - Phaser 3.5
 
-
-## Getting Started
-
-1. - Copy the git link `https://github.com/rloterh/AsteroidsBlitz.git` of this project
-2. - In your terminal run the command `git clone https://github.com/rloterh/AsteroidsBlitz.git`
-3. - Navigate to the cloned project directory
-4. - Run the command `npm init` to setup webpack and other project dependencies
-5. - Run the command `npm run start` to compile the project
-6. - The application launches in the default web browser with url as: `http://localhost:9000/`
 
 
 ### Testing Project
