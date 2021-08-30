@@ -18,7 +18,7 @@ export default class TitleScreen extends Phaser.Scene {
     this.add.text(400, 300, 'Press Space to Start!')
       .setOrigin(0.5);
 
-    this.add.text(400, 520, '**Instructions:\n\n-> Move mouse to rotate ship\n-> click to shoot')
+    this.add.text(400, 520, '**Instructions:\n\n-> Move mouse (on game screen) to rotate ship \n-> click (on game screen) to shoot')
       .setOrigin(0.5);
 
     this.input.keyboard.once('keydown-SPACE', () => {

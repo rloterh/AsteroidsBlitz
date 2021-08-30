@@ -3,8 +3,7 @@
 ![Microverse](https://img.shields.io/badge/-Microverse-007bff?style=for-the-badge)
 
 ## Description
-AsteroidsBlitz is a mini shooter game whereby asteroids supposedly attacks a spaceship, and the spacship defends itself by firing missiles at the asteroids. 'Game Over'  scene appears when an asteroid (enemy) shoots or crashes the scapeship (controlled by player). A players then enters his/ her alias player name and the the scores is stored over an online api. Players current score, together with all other previously played games are then displayed on a Leader Board scene. A player can replay a game by simply hitting the 'spacebar'. This project is mainly developed with JavaScrip and [Phaser](https://phaser.io/) (A JavaScript game library).
-
+AsteroidsBlitz is a mini shooter game whereby asteroids supposedly attack a spaceship, and the spacship defends itself by firing missiles at the asteroids. It's 'Game Over' when an asteroid (enemy) shoots or crashes the spaceship (controlled by player). A players then enters his/ her alias player name and the the scores is stored in a Leader board api. The player's current score, together with all other previously played games are subsequently displayed on the Leader Board scene.
 
 ## Library Directory 📙
 
@@ -12,7 +11,7 @@ AsteroidsBlitz is a mini shooter game whereby asteroids supposedly attacks a spa
 | ------------------------- |
 | [Live Demo](#live-demo) |
 | [App Screenshots](#app-screenshots) |
-| [How To Play](#how-to-play)   |
+| [Instructions](#instructions)   |
 | [Getting Started](#getting-started)   |
 | [Built With](#built-with)   |
 | [Testing](#testing)   |
@@ -27,15 +26,24 @@ AsteroidsBlitz is a mini shooter game whereby asteroids supposedly attacks a spa
 ## App Screenshots
 | |
 |:-------------------------:|
-| <img width="800" alt="Sign up/ Login page" src="https://user-images.githubusercontent.com/12745474/131269193-4a9f22b5-11d9-4730-945f-752bdf3d9506.png"> <p align="center">Title Scene <p>|
-| <img width="800" alt="Homepage" src="https://user-images.githubusercontent.com/12745474/131269233-b9cbde0d-ca91-4bb8-86bb-08e3c2e6c132.png"> <p align="center">Game Scene </p>|
-| <img width="800" alt="User profile" src="https://user-images.githubusercontent.com/12745474/131269279-cf4a6a6d-df69-4e68-ab45-b5befaed3715.png"> <p align="center"> Leader Board Scene </p>|
+| <img width="800" alt="Sign up/ Login page" src="https://user-images.githubusercontent.com/12745474/131269193-4a9f22b5-11d9-4730-945f-752bdf3d9506.png"> <p align="center"><b>Title Scene</b><p>|
+| <img width="800" alt="Homepage" src="https://user-images.githubusercontent.com/12745474/131269233-b9cbde0d-ca91-4bb8-86bb-08e3c2e6c132.png"> <p align="center"><b>Game Scene</b></p>|
+| <img width="800" alt="User profile" src="https://user-images.githubusercontent.com/12745474/131355035-610882fd-3ea8-4cea-aa19-8782f5738353.png"> <p align="center"> <b>Leader Board Scene</b></p>|
 
-## How To Play
 
-1. - Press the `Space bar` to start game
-2. - Move `mouse` to direct or rotate spaceship
-3. - Left-click `mouse` to launch missile
+## Instructions 🎮
+
+### Start Game
+
+- `Start` - `Space bar`
+
+### Direct Character
+
+- `Rotate` - `Move mouse over an angle` **on the game screen**
+
+### Shoot
+
+- `launch missile` - `Left-click` **on the game screen**
 
  <br>
 
@@ -117,4 +125,3 @@ Give a ⭐️ if you like this project!
 ### License
 
 ![Cocoapods](https://img.shields.io/cocoapods/l/AFNetworking?color=red&style=for-the-badge)
-
