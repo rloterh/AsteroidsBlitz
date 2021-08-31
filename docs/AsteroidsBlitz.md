@@ -1,7 +1,7 @@
-# overview
-<img width="800" alt="Homepage" src="https://user-images.githubusercontent.com/12745474/131269233-b9cbde0d-ca91-4bb8-86bb-08e3c2e6c132.png">
+# Overview
+|<img width="800" alt="Homepage" src="https://user-images.githubusercontent.com/12745474/131269233-b9cbde0d-ca91-4bb8-86bb-08e3c2e6c132.png">|
 
-**🎮️ Name of the game: Asteroids Blitz
+## 🎮️ Name of the game: Asteroids Blitz
 
 ## Author
 
