@@ -21,7 +21,7 @@
 
 ## 🗣️ About the game
 
-_This is a Shooter game, where a player's spaceship defends itself from shooting asteroidsn stars in space, by firing missiles at the attacking asteroids. The asteroids attack at varying speeds.  the forest has bad zones. A player's spaceship can rotate itself to fire missiles at the asteroids coming from various angles_
+_This is a Shooter game, where a player's spaceship defends itself from shooting asteroids in space, by firing missiles at the attacking asteroids. The asteroids attack at varying speeds.  the forest has bad zones. A player's spaceship can rotate itself to fire missiles at the asteroids coming from various angles_
 
 ## 💵 Monetization
 
@@ -33,12 +33,12 @@ You can play the game just by using mouse movement and clicks.
 
 ## Game project structure
 
-- Details: Build platform game with Phaser3 Library
-- How it works: Using Phaser3 JS library to create the canvas/webGl and different scenes.
+- Details: Build platform game with Phaser 3 Library
+- How it works: Using Phaser 3 JS library to create the canvas/webGl and different scenes.
 - How it works: Collected assets from different resources and used Phaser3 to animate and edit different features like size, respawn, velocity, movement, color.
 - Details: Add game objects
 - How it works: Added missiles and score is updated upon firing an asteroid.
-- Details: Add a Learderboard
+- Details: Add a Leaderboard
 - How it works: Use API to store player name and score, Then get this data and sort the top highest 5 scores and display them.
 
 # Game elements
