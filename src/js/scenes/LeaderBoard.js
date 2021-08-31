@@ -30,6 +30,7 @@ export default class LeaderBoard extends Phaser.Scene {
   displayScores = (result) => {
     e.ul.innerHTML = '';
     result.sort((a, b) => b.score - a.score);
+    result = result.splice(0, 5);
     result.forEach(({ user, score }) => {
       const li = document.createElement('li');
       li.textContent = `${user}   ..................    ${score}`;
