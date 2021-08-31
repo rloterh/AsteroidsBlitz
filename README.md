@@ -5,19 +5,8 @@
 ## Description
 AsteroidsBlitz is a mini shooter game whereby asteroids supposedly attack a spaceship, and the spacship defends itself by firing missiles at the asteroids. It's 'Game Over' when an asteroid (enemy) shoots or crashes the spaceship (controlled by player). A players then enters his/ her alias player name and the the scores is stored in a Leader board api. The player's current score, together with all other previously played games are subsequently displayed on the Leader Board scene.
 
-## Library Directory 📙
-
-| Contents                  |
-| ------------------------- |
-| [Live Demo](#live-demo) |
-| [App Screenshots](#app-screenshots) |
-| [Instructions](#instructions)   |
-| [Getting Started](#getting-started)   |
-| [Built With](#built-with)   |
-| [Testing](#testing)   |
-| [Author](#author)       |
-| [License](#license)       |
-
+## Game Design
+Asteroids Blitz game has 5 main scenes: Preload, TitleScene, Game, GameOver and LeaderBoard. There's also a main configuration file which file which contains the game configuration and links to the html which a browser winddow renders the visuals via either a  webGL or HTML canvas element. The Preload file loads the initial assets required for the game before the game starts. The Game file controls the game play, from physics to game mouse inputs as well as the main game logic. Kindly click [here](https://github.com/rloterh/AsteroidsBlitz/docs/AsteroidsBlitz.md) for more details on the game documentation.
 
 ## Live Demo
 [Asteroid Blitz live demo](https://modest-clarke-ab794f.netlify.app/)
